@@ -33,6 +33,11 @@ namespace DDSegmentation {
     double GetBl2() { return fV4.X()*std::tan(fPhiZRot/2.); }
     double GetTl2() { return fV2.X()*std::tan(fPhiZRot/2.); }
 
+    ///
+    double GetInnerX() { return fInnerX; }
+    double GetThetaOfCenter() { return fThetaOfCenter; }
+    double GetDeltaTheta() { return fDeltaTheta; }
+    ///
     double GetH2sipm() { return fCurrentOuterHalfSipm; }
     double GetBl2sipm() { return fV4sipm.X()*std::tan(fPhiZRot/2.); }
     double GetTl2sipm() { return fV2sipm.X()*std::tan(fPhiZRot/2.); }

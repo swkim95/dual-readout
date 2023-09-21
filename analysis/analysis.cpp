@@ -68,7 +68,7 @@ int main(int , char* argv[]) {
     auto& caloHits = pStore->get<edm4hep::CalorimeterHitCollection>("DRcalo2dHits");
     auto& rawHits = pStore->get<edm4hep::RawCalorimeterHitCollection>("RawCalorimeterHits");
     auto& digiHits = pStore->get<edm4hep::RawCalorimeterHitCollection>("DigiCalorimeterHits");
-    auto& procTimes = pStore->get<edm4hep::SparseVectorCollection>("DRpostprocTime");
+    // auto& procTimes = pStore->get<edm4hep::SparseVectorCollection>("DRpostprocTime");
 
     float Edep = 0.;
     for (unsigned int iEdep = 0; iEdep < edepHits.size(); iEdep++)
@@ -83,7 +83,7 @@ int main(int , char* argv[]) {
       const auto& timeStruct = rawTimeStructs.at(idx);
       const auto& wavlenStruct = rawWavlenStructs.at(idx);
       const auto& waveform = digiWaveforms.at(idx);
-      const auto& procTime = procTimes.at(idx);
+      // const auto& procTime = procTimes.at(idx);
 
       int type = caloHit.getType();
       float en = caloHit.getEnergy();
@@ -120,10 +120,10 @@ int main(int , char* argv[]) {
         tD->Fill(timeBin,waveform.getContents(bin));
       }
 
-      for (unsigned int bin = 0; bin < procTime.centers_size(); bin++) {
-        float timeBin = procTime.getCenters(bin);
-        tProc->Fill(timeBin,procTime.getContents(bin));
-      }
+      // for (unsigned int bin = 0; bin < procTime.centers_size(); bin++) {
+      //   float timeBin = procTime.getCenters(bin);
+      //   tProc->Fill(timeBin,procTime.getContents(bin));
+      // }
     }
 
     E_Ss.push_back(en_S);

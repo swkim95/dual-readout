@@ -84,6 +84,7 @@ void ddDRcalo::DRconstructor::implementTowers(xml_comp_t& x_theta, dd4hep::DDSeg
     implementSipms(sipmLayerVol, tower);
 
     for (int nPhi = 0; nPhi < x_theta.nphi(); nPhi++) {
+    // for (int nPhi = 0; nPhi < 1; nPhi++) {
       placeAssembly(x_theta,x_wafer,param,assemblyEnvelop,towerVol,sipmLayerVol,sipmWaferVol,towerNo,nPhi);
 
       if ( fX_det.reflect() )
