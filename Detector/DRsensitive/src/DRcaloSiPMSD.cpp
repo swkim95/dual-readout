@@ -17,7 +17,7 @@ drc::DRcaloSiPMSD::DRcaloSiPMSD(const std::string aName, const std::string aRead
 fWavBin(120), fTimeBin(650), fWavlenStart(900.), fWavlenEnd(300.), fTimeStart(5.), fTimeEnd(70.)
 {
   collectionName.insert(aReadoutName);
-  fSeg = dynamic_cast<dd4hep::DDSegmentation::GridDRcalo*>( aSeg.segmentation() );
+  fSeg = dynamic_cast<dd4hep::DDSegmentation::GridDRcalo_k4geo*>( aSeg.segmentation() );
   fWavlenStep = (fWavlenStart-fWavlenEnd)/(float)fWavBin;
   fTimeStep = (fTimeEnd-fTimeStart)/(float)fTimeBin;
 }

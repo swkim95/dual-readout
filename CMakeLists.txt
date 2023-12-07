@@ -13,6 +13,7 @@ include(GNUInstallDirs)
 
 find_package(ROOT REQUIRED)
 find_package(podio REQUIRED HINTS $ENV{PODIO})
+find_package(k4geo REQUIRED)
 find_package(Gaudi REQUIRED)
 find_package(EDM4HEP)
 find_package(k4FWCore REQUIRED)

@@ -2,7 +2,8 @@
 #define DRcaloSiPMSD_h 1
 
 #include "DRcaloSiPMHit.h"
-#include "GridDRcalo.h"
+// #include "GridDRcalo.h"
+#include "detectorSegmentations/GridDRcalo_k4geo.h"
 #include "DD4hep/Segmentations.h"
 
 #include "G4VSensitiveDetector.hh"
@@ -22,7 +23,8 @@ namespace drc {
 
   private:
     DRcaloSiPMHitsCollection* fHitCollection;
-    dd4hep::DDSegmentation::GridDRcalo* fSeg;
+    // dd4hep::DDSegmentation::GridDRcalo* fSeg;
+    dd4hep::DDSegmentation::GridDRcalo_k4geo* fSeg;
     G4int fHCID;
 
     G4int fWavBin;

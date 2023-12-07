@@ -13,7 +13,7 @@
 
 #include "SimG4DRcaloActionInitialization.h"
 
-#include "GridDRcalo.h"
+#include "detectorSegmentations/GridDRcalo_k4geo.h"
 
 class SimG4DRcaloActions : public AlgTool, virtual public ISimG4ActionTool {
 public:
@@ -27,7 +27,7 @@ public:
 
 private:
   ServiceHandle<IGeoSvc> m_geoSvc;
-  dd4hep::DDSegmentation::GridDRcalo* pSeg;
+  dd4hep::DDSegmentation::GridDRcalo_k4geo* pSeg;
 
   Gaudi::Property<std::string> m_readoutName{this, "readoutName", "DRcaloSiPMreadout", "readout name of DRcalo"};
   Gaudi::Property<std::string> m_scintName{this, "scintName", "DR_Polystyrene", "Name of the scintillators"};

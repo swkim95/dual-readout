@@ -1,7 +1,7 @@
 #ifndef SimG4DRcaloSteppingAction_h
 #define SimG4DRcaloSteppingAction_h 1
 
-#include "GridDRcalo.h"
+#include "detectorSegmentations/GridDRcalo_k4geo.h"
 
 #include "G4UserSteppingAction.hh"
 #include "G4Track.hh"
@@ -20,7 +20,7 @@ public:
 
   virtual void UserSteppingAction(const G4Step*);
 
-  void setSegmentation(dd4hep::DDSegmentation::GridDRcalo* seg) { pSeg = seg; }
+  void setSegmentation(dd4hep::DDSegmentation::GridDRcalo_k4geo* seg) { pSeg = seg; }
   void setEdepsCollection(edm4hep::SimCalorimeterHitCollection* data) { m_Edeps = data; }
   void setEdeps3dCollection(edm4hep::SimCalorimeterHitCollection* data) { m_Edeps3d = data; }
   void setLeakagesCollection(edm4hep::MCParticleCollection* data) { m_Leakages = data; }
@@ -38,7 +38,7 @@ private:
   int fPrevId;
 
   G4OpticalSurface* fFilterSurf;
-  dd4hep::DDSegmentation::GridDRcalo* pSeg;
+  dd4hep::DDSegmentation::GridDRcalo_k4geo* pSeg;
 
   // collections owned by SimG4DRcaloEventAction
   edm4hep::SimCalorimeterHitCollection* m_Edeps;

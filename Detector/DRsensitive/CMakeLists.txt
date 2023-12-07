@@ -19,7 +19,9 @@ set_target_properties(DRsensitive PROPERTIES PUBLIC_HEADER "${headers}")
 
 target_link_libraries(
   DRsensitive
-  DRsegmentation
+  # DRsegmentation
+  k4geo::detectorSegmentations
+  k4geo::detectorSegmentationsPlugin
   DD4hep::DDCore
   DD4hep::DDG4
 )

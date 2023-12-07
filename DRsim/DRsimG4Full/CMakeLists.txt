@@ -13,7 +13,9 @@ gaudi_add_library(DRsimG4Full
   LINK
   EDM4HEP::edm4hep
   ${Geant4_LIBRARIES}
-  DRsegmentation
+  # DRsegmentation
+  k4geo::detectorSegmentations
+  k4geo::detectorSegmentationsPlugin
   DD4hep::DDCore
   DD4hep::DDG4
 )
@@ -34,7 +36,9 @@ gaudi_add_module(DRsimG4FullPlugins
   Gaudi::GaudiKernel
   k4FWCore::k4FWCore
   ${Geant4_LIBRARIES}
-  DRsegmentation
+  # DRsegmentation
+  k4geo::detectorSegmentations
+  k4geo::detectorSegmentationsPlugin
   DRsimG4Full
 )
 
