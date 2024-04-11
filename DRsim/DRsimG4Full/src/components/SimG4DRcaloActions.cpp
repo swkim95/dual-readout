@@ -19,7 +19,8 @@ StatusCode SimG4DRcaloActions::initialize() {
     return StatusCode::FAILURE;
   }
 
-  pSeg = dynamic_cast<dd4hep::DDSegmentation::GridDRcalo_k4geo*>(m_geoSvc->lcdd()->readout(m_readoutName).segmentation().segmentation());
+  // pSeg = dynamic_cast<dd4hep::DDSegmentation::GridDRcalo_k4geo*>(m_geoSvc->lcdd()->readout(m_readoutName).segmentation().segmentation());
+  pSeg = dynamic_cast<dd4hep::DDSegmentation::GridDRcalo_k4geo*>(m_geoSvc->getDetector()->readout(m_readoutName).segmentation().segmentation());
 
   return StatusCode::SUCCESS;
 }

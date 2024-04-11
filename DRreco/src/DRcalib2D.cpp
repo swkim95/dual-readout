@@ -26,7 +26,8 @@ StatusCode DRcalib2D::initialize() {
     return StatusCode::FAILURE;
   }
 
-  pSeg = dynamic_cast<dd4hep::DDSegmentation::GridDRcalo*>(m_geoSvc->lcdd()->readout(m_readoutName).segmentation().segmentation());
+  // pSeg = dynamic_cast<dd4hep::DDSegmentation::GridDRcalo*>(m_geoSvc->lcdd()->readout(m_readoutName).segmentation().segmentation());
+  pSeg = dynamic_cast<dd4hep::DDSegmentation::GridDRcalo*>(m_geoSvc->getDetector()->readout(m_readoutName).segmentation().segmentation());
 
   readCSV(m_calibPath);
 

@@ -25,7 +25,8 @@ StatusCode SimG4SaveDRcaloHits::initialize() {
     return StatusCode::FAILURE;
   }
 
-  auto lcdd = m_geoSvc->lcdd();
+  // auto lcdd = m_geoSvc->lcdd();
+  auto lcdd = m_geoSvc->getDetector();
   auto allReadouts = lcdd->readouts();
   for (auto& readoutName : m_readoutNames) {
     if (allReadouts.find(readoutName) == allReadouts.end()) {
